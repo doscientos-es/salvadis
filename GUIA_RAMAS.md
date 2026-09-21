@@ -1,66 +1,39 @@
 # Guía de ramas (dev → main)
 
-Este repositorio trabaja con dos ramas:
+- **`dev`** → aquí se hacen **todos los cambios** (rama de trabajo).
+- **`main`** → la web en producción. Solo se actualiza cuando en `dev` todo funciona.
 
-- **`dev`** → aquí se hacen **todos los cambios**. Es la rama de trabajo.
-- **`main`** → es la web en producción. Solo se actualiza cuando en `dev` todo funciona.
-
-> Regla de oro: **nunca** se hacen cambios directamente en `main`. Siempre se trabaja en `dev` y, cuando todo está probado, se pasa a `main`.
+> Regla de oro: los cambios se hacen **siempre** en `dev`, nunca directamente en `main`.
 
 ---
 
-## 1. Trabajar en `dev`
-
-Antes de empezar, asegúrate de estar en `dev` y con lo último:
+## 1. Hacer cambios en `dev`
 
 ```powershell
 git checkout dev
 git pull
+git add .
+git commit -m "descripción de los cambios"
+git push
 ```
-
-Haz tus cambios y guárdalos:
-
-```powershell
-git status                      # ver qué archivos has tocado (opcional)
-git add .                       # añadir todos los cambios
-git commit -m "Descripción breve de lo que has cambiado"
-git push                        # subir los cambios a la rama dev
-```
-
-Repite este paso tantas veces como quieras. **Todos los cambios van a `dev`.**
 
 ---
 
-## 2. Probar
+## 2. Subirlo a `main` y seguir en `dev` (copiar y pegar)
 
-Comprueba que todo funciona (en local o en el entorno/prevista de `dev`) **antes** de pasar nada a `main`.
-
----
-
-## 3. Pasar `dev` a `main` (copiar y pegar)
-
-Cuando estés seguro de que todo funciona en el entorno de prueba, copia y pega este bloque de comandos tal cual:
+Cuando en `dev` todo funcione, copia y pega este bloque **tal cual**:
 
 ```powershell
 git checkout main
 git pull origin main
 git merge dev
 git push origin main
-```
-
-Con esto, `main` queda con exactamente lo mismo que `dev`. No hay que hacer nada más en GitHub.
-
----
-
-## 4. Sincronizar `dev` con `main` (después del merge)
-
-Para que `dev` vuelva a estar al día con lo que ya hay en `main`:
-
-```powershell
 git checkout dev
 git merge main
 git push
 ```
+
+Resultado: `main` queda **igual que `dev`** y tú sigues en `dev` para seguir trabajando.
 
 ---
 
