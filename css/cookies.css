@@ -1,0 +1,407 @@
+/* ==========================================================================
+   Banner de cookies y panel de preferencias
+   ========================================================================== */
+
+:root {
+    --ck-accent: #E8A844;
+    --ck-accent-dark: #cf9130;
+    --ck-ink: #1d2330;
+    --ck-ink-soft: #3a4256;
+    --ck-text: #303030;
+    --ck-muted: #6b7280;
+    --ck-line: #e5e7eb;
+    --ck-surface: #ffffff;
+    --ck-radius: 14px;
+    --ck-shadow: 0 18px 50px rgba(15, 23, 42, 0.28);
+    --ck-z-banner: 10050;
+    --ck-z-modal: 10060;
+}
+
+body.ck-banner-open {
+    padding-bottom: 148px;
+}
+
+body.ck-locked {
+    overflow: hidden;
+}
+
+/* ---------------------------------------------------------------- Banner */
+
+.cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--ck-z-banner);
+    background: var(--ck-ink);
+    color: #eef1f6;
+    box-shadow: 0 -12px 40px rgba(15, 23, 42, 0.32);
+    border-top: 3px solid var(--ck-accent);
+    transform: translateY(110%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+.cookie-banner.is-visible {
+    transform: translateY(0);
+}
+
+.cookie-banner__inner {
+    max-width: var(--site-max-width, 1300px);
+    margin: 0 auto;
+    padding: 20px var(--site-gutter, 20px);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.cookie-banner__text {
+    flex: 1 1 auto;
+}
+
+.cookie-banner__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 4px;
+}
+
+.cookie-banner__desc {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #c7cede;
+}
+
+.cookie-banner__desc a {
+    color: var(--ck-accent);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+}
+
+/* --------------------------------------------------------------- Botones */
+
+.ck-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 13px 22px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.ck-btn:active {
+    transform: translateY(1px);
+}
+
+.ck-btn:focus-visible {
+    outline: 3px solid rgba(232, 168, 68, 0.55);
+    outline-offset: 2px;
+}
+
+.ck-btn--accept {
+    background: var(--ck-accent);
+    color: var(--ck-ink);
+}
+
+.ck-btn--accept:hover {
+    background: var(--ck-accent-dark);
+}
+
+.ck-btn--reject {
+    background: transparent;
+    color: #eef1f6;
+    border-color: rgba(238, 241, 246, 0.55);
+}
+
+.ck-btn--reject:hover {
+    background: rgba(238, 241, 246, 0.12);
+}
+
+.ck-btn--ghost {
+    background: transparent;
+    color: #c7cede;
+    text-decoration: underline;
+    padding: 13px 8px;
+}
+
+.ck-btn--ghost:hover {
+    color: #fff;
+}
+
+/* ---------------------------------------------------------------- Modal */
+
+.cookie-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--ck-z-modal);
+    background: rgba(15, 23, 42, 0.62);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.cookie-modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie-modal {
+    width: 100%;
+    max-width: 620px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: var(--ck-surface);
+    color: var(--ck-text);
+    border-radius: var(--ck-radius);
+    box-shadow: var(--ck-shadow);
+    transform: translateY(14px) scale(0.98);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+.cookie-modal-overlay.is-visible .cookie-modal {
+    transform: translateY(0) scale(1);
+}
+
+.cookie-modal__head {
+    padding: 24px 26px 12px;
+    border-bottom: 1px solid var(--ck-line);
+}
+
+.cookie-modal__head h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: var(--ck-ink);
+    margin: 0 0 6px;
+}
+
+.cookie-modal__head p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ck-muted);
+}
+
+.cookie-modal__body {
+    padding: 8px 26px 4px;
+}
+
+.cookie-cat {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--ck-line);
+}
+
+.cookie-cat:last-child {
+    border-bottom: 0;
+}
+
+.cookie-cat__info {
+    flex: 1 1 auto;
+}
+
+.cookie-cat__name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--ck-ink);
+    margin: 0 0 2px;
+}
+
+.cookie-cat__desc {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--ck-muted);
+}
+
+.cookie-cat__desc a {
+    color: var(--ck-accent-dark);
+}
+
+/* Interruptor */
+.ck-switch {
+    position: relative;
+    flex: 0 0 auto;
+    width: 50px;
+    height: 28px;
+    margin-top: 2px;
+}
+
+.ck-switch input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.ck-switch__track {
+    position: absolute;
+    inset: 0;
+    background: #cbd2df;
+    border-radius: 999px;
+    transition: background 0.2s ease;
+    pointer-events: none;
+}
+
+.ck-switch__track::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.ck-switch input:checked + .ck-switch__track {
+    background: var(--ck-accent);
+}
+
+.ck-switch input:checked + .ck-switch__track::after {
+    transform: translateX(22px);
+}
+
+.ck-switch input:disabled {
+    cursor: not-allowed;
+}
+
+.ck-switch input:disabled + .ck-switch__track {
+    background: var(--ck-accent);
+    opacity: 0.6;
+}
+
+.ck-switch input:focus-visible + .ck-switch__track {
+    outline: 3px solid rgba(232, 168, 68, 0.55);
+    outline-offset: 2px;
+}
+
+.cookie-modal__foot {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 26px 24px;
+    flex-wrap: wrap;
+}
+
+.cookie-modal .ck-btn--reject {
+    color: var(--ck-ink-soft);
+    border-color: #cbd2df;
+}
+
+.cookie-modal .ck-btn--reject:hover {
+    background: #f3f4f6;
+}
+
+/* --------------------------------------------------- Embeds con consentimiento */
+
+.consent-embed {
+    position: relative;
+}
+
+.consent-embed__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    min-height: 400px;
+    padding: 30px 24px;
+    background: #f4f5f8;
+    border: 1px dashed #cbd2df;
+    border-radius: 8px;
+    color: var(--ck-text);
+}
+
+.consent-embed__placeholder[hidden] {
+    display: none;
+}
+
+.consent-embed__placeholder i {
+    font-size: 2rem;
+    color: var(--ck-accent-dark);
+    line-height: 1;
+}
+
+.consent-embed__placeholder p {
+    margin: 0;
+    max-width: 420px;
+    font-size: 0.92rem;
+    color: var(--ck-muted);
+}
+
+.consent-embed__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.consent-embed__actions .ck-btn--ghost {
+    color: var(--ck-ink-soft);
+}
+
+.consent-embed--gated iframe[data-consent-src] {
+    display: none;
+}
+
+/* ----------------------------------------------------------- Responsive */
+
+@media (max-width: 900px) {
+    body.ck-banner-open {
+        padding-bottom: 210px;
+    }
+
+    .cookie-banner__inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .cookie-banner__actions {
+        justify-content: stretch;
+        flex-wrap: wrap;
+    }
+
+    .cookie-banner__actions .ck-btn {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .cookie-modal__foot {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .cookie-modal__foot .ck-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
