@@ -1,0 +1,246 @@
+/*Top bar*/
+.top-bar {
+    background-color: #E8A844;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    flex-wrap: wrap;
+    gap: 16px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    /* MÁS alto que el navbar */
+
+}
+
+.container-topbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--site-max-width);
+    padding-left: var(--site-gutter);
+    padding-right: var(--site-gutter);
+    margin: 0 auto;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.topbar-left,
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topbar-left span, .topbar-left a, .topbar-right a {
+    margin-right: 0;
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.3;
+
+}
+
+.topbar-right a i, .topbar-left a i {
+    font-size: 16px;
+    margin-left: 0;
+    margin-right: 8px;
+    color: #fff;
+
+}
+
+.topbar-right a:hover i, .topbar-left a:hover i, .topbar-left a:hover {
+    color: #303030;
+
+}
+
+.mobile-topbar-panel {
+    display: none;
+}
+
+.mobile-fixed-cta {
+    display: none;
+}
+
+/*Navbar*/
+.navbar {
+    margin-bottom: 0;
+    margin-top: var(--topbar-height);
+    background-color: white;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px large !important;
+    line-height: 1.42857143 !important;
+    border-radius: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: var(--navbar-height);
+
+}
+
+.navbar-brand img {
+    margin-top: -15px;
+    margin-left: 0;
+
+}
+
+.navbar > .container {
+    width: 100%;
+    max-width: var(--site-max-width);
+    padding-left: var(--site-gutter);
+    padding-right: var(--site-gutter);
+}
+
+#myNavbar {
+    margin-top: 15px;
+    background-color: #fff;
+
+}
+
+/* Estilos generales del navbar */
+.navbar-nav > li > a {
+    position: relative;
+    color: #303030 !important;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+}
+
+/* Línea inferior animada en los botones principales */
+.navbar-nav > li > a::after, .dropdown-menu > li > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    /* Grosor de la línea */
+    background-color: #E8A844;
+    /* Color de la línea */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+
+}
+
+/* Cuando el usuario pasa el cursor, la línea se expande desde el centro */
+.navbar-nav > li > a:hover::after, .dropdown-menu > li > a:hover::after {
+    width: 100%;
+    left: 0;
+
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+    background-color: white;
+    /* Fondo del menú desplegable */
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    /* Ocultar por defecto */
+}
+
+/* Efecto de entrada suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+
+    }
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+
+}
+
+/* Estilos de los enlaces dentro del menú desplegable */
+.dropdown-menu > li > a {
+    position: relative;
+    padding: 10px 20px;
+    color: #303030 !important;
+    transition: color 0.3s ease-in-out;
+    white-space: normal;
+    /* Permite que el texto largo se ajuste en varias líneas */
+    text-align: left;
+
+}
+
+/* Ajustar espaciado en el dropdown */
+.dropdown-menu > li {
+    position: relative;
+
+}
+
+/* Estilo del ícono de flecha */
+.dropdown-icon {
+    font-size: 14px;
+    /* Tamaño del ícono */
+    color: #E8A844;
+    /* Color de la flecha */
+    margin-left: 5px;
+    /* Espaciado entre texto e ícono */
+    transition: transform 0.3s ease-in-out;
+    /* Animación de giro */
+}
+
+/* Girar la flecha cuando el menú está abierto */
+.navbar-nav li.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+
+}
+
+.navbar-nav li.dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    /* Este sigue funcionando en desktop */
+}
+
+.navbar-nav li.dropdown .dropdown-menu {
+    left: 0;
+    /* Alinea el menú con el inicio del toggle */
+    right: auto;
+    /* Asegura que no quede forzado a la derecha */
+    top: 100%;
+    /* Lo coloca justo debajo del enlace */
+    transform: none;
+    /* Evita desplazamientos */
+    text-align: left;
+    /* Texto alineado a la izquierda */
+    min-width: 220px;
+    /* Asegura que no se colapse con textos largos */
+}
+
+.btn:active {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+    transform: scale(0.98);
+    font-weight: bold;
+
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: white !important;
+    background-color: #fff;
+
+}
+
+.icon-bar {
+    color: transparent !important;
+
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #303030;
+}

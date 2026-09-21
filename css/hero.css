@@ -1,0 +1,223 @@
+/* Hero: Cubre toda la pantalla */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Ocupa toda la pantalla */
+    padding-top: var(--header-offset);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+/* Video de fondo */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+/* Capa oscura para mejorar la legibilidad */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, #303030 96%);
+
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 10px;
+    /* Ajusta la altura del degradado */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #303030 100%);
+    z-index: 1;
+
+}
+
+/* Contenido del Hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    min-height: calc(100vh - var(--header-offset));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+}
+
+.hero-content h1, .hero-content p {
+    line-height: 1.2;
+    margin: 0;
+
+}
+.hero-content p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #E8A844;
+
+}
+.hero-content .btn-hero {
+    margin-top: 0px;
+}
+
+
+/* Botón circular con borde BLANCO y fondo transparente */
+.btn-hero {
+    display: inline-flex;
+    /* Permite alinear texto e icono */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Espacio entre el texto y el icono */
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    color: #fff;
+    /* Color del texto e icono */
+    background: transparent;
+    border: 2px solid #fff;
+    /* Borde del botón */
+    border-radius: 50px;
+    /* Hace el botón más redondo */
+    text-decoration: none !important;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.btn-hero span {
+    text-decoration: none !important;
+    display: inline-block;
+    /* Asegura que se comporte bien */
+}
+
+/* Evitar que el subrayado aparezca solo en el texto */
+.btn-text {
+    display: inline-block;
+    position: relative;
+
+}
+
+/* Efecto hover en el texto: subrayado animado */
+.btn-hero:hover .btn-text::after {
+    width: 100%;
+    left: 0;
+
+}
+
+/* Evitar que el icono sea clickeable y evitar el subrayado */
+.btn-hero .material-symbols-outlined {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    pointer-events: none;
+    text-decoration: none !important;
+    /* Asegurar que el icono no se subraye */
+}
+
+/* Efecto hover: cambia el color del botón y del icono */
+.btn-hero:hover {
+    background-color: #E8A844;
+    color: white;
+    border-color: #E8A844;
+
+}
+
+.btn-hero:hover .material-symbols-outlined {
+    color: white;
+    /* Cambia el color del icono en hover */
+    transform: translate(2px,-2px);
+
+}
+
+/* Botón circular con borde OSCURO y fondo transparente */
+.btn-black {
+    display: inline-flex;
+    /* Permite alinear texto e icono */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Espacio entre el texto y el icono */
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    color: #303030;
+    /* Color del texto e icono */
+    background: transparent;
+    border: 2px solid #303030;
+    /* Borde del botón */
+    border-radius: 50px;
+    /* Hace el botón más redondo */
+    text-decoration: none !important;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.btn-black span {
+    text-decoration: none !important;
+    display: inline-block;
+    /* Asegura que se comporte bien */
+}
+
+/* Efecto hover en el texto: subrayado animado */
+.btn-black:hover .btn-text::after {
+    width: 100%;
+    left: 0;
+
+}
+
+/* Evitar que el icono sea clickeable y evitar el subrayado */
+.btn-black .material-symbols-outlined {
+    font-size: 1.5rem;
+    /* Tamaño del icono */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    pointer-events: none;
+    /* Evita que el icono sea clickeable */
+    text-decoration: none !important;
+    /* Asegurar que el icono no se subraye */
+}
+
+/* Efecto hover: cambia el color del botón y del icono */
+.btn-black:hover {
+    background-color: #E8A844;
+    color: white;
+    border-color: #E8A844;
+
+}
+
+.btn-black:hover .material-symbols-outlined {
+    color: white;
+    /* Cambia el color del icono en hover */
+    transform: translate(2px,-2px);
+
+}
+.cta-content .btn-hero {
+    margin-bottom: 0px !important;
+}
+
+.cta-content .btn-hero:focus,
+.cta-content .btn-hero:focus-visible,
+.cta-content .btn-hero:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #fff !important;
+}

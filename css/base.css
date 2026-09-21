@@ -1,0 +1,89 @@
+html {
+    font-size: 16px;
+    /* Tama�o base */
+    scroll-behavior: smooth;
+
+}
+
+:root {
+    --header-offset: 107px;
+    --topbar-height: 35px;
+    --navbar-height: 72px;
+    --site-max-width: 1300px;
+    --site-gutter: 20px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #303030;
+    font-size: 1rem;
+    Line-height: 1.6;
+
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+img {
+    border-radius: 8px !important;
+
+}
+
+strong {
+    font-weight: 600;
+
+}
+
+/* myPage */
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+
+}
+
+h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #E8A844;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 500;
+
+}
+
+/* Compacta la pareja subt�tulo + t�tulo */
+h3 + h2 {
+    margin-top: 0;
+
+}
+
+/* Mantiene h2/h3 como un mismo bloque visual y separa el texto de debajo */
+h2 + h3 + p, h3 + h2 + p, h2 + p, h3 + p {
+    margin-top: 30px !important;
+
+}
+
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+
+}
