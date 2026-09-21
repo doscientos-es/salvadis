@@ -37,18 +37,9 @@ Comprueba que todo funciona (en local o en el entorno/prevista de `dev`) **antes
 
 ---
 
-## 3. Pasar `dev` a `main`
+## 3. Pasar `dev` a `main` (copiar y pegar)
 
-Cuando estés seguro de que todo funciona, hay dos formas:
-
-### Opción A — Pull Request en GitHub (recomendada)
-
-1. Entra en https://github.com/doscientos-es/salvadis
-2. Pestaña **Pull requests** → botón **New pull request**
-3. Configura: `base: main` ← `compare: dev`
-4. Revisa los cambios que aparecen y pulsa **Merge pull request** → **Confirm merge**.
-
-### Opción B — Por comandos
+Cuando estés seguro de que todo funciona en el entorno de prueba, copia y pega este bloque de comandos tal cual:
 
 ```powershell
 git checkout main
@@ -56,6 +47,8 @@ git pull origin main
 git merge dev
 git push origin main
 ```
+
+Con esto, `main` queda con exactamente lo mismo que `dev`. No hay que hacer nada más en GitHub.
 
 ---
 
@@ -73,15 +66,15 @@ git push
 
 ## Comandos útiles
 
-| Comando | Para qué sirve |
-| --- | --- |
-| `git status` | Ver en qué rama estás y qué archivos has cambiado. |
-| `git branch` | Ver todas las ramas locales (la actual sale con `*`). |
-| `git checkout dev` | Cambiar a la rama `dev`. |
-| `git checkout main` | Cambiar a la rama `main`. |
-| `git log --oneline -10` | Ver los últimos 10 commits. |
-| `git stash` | Guardar temporalmente cambios sin hacer commit. |
-| `git stash pop` | Recuperar los cambios guardados con `git stash`. |
+| Comando                 | Para qué sirve                                        |
+| ----------------------- | ----------------------------------------------------- |
+| `git status`            | Ver en qué rama estás y qué archivos has cambiado.    |
+| `git branch`            | Ver todas las ramas locales (la actual sale con `*`). |
+| `git checkout dev`      | Cambiar a la rama `dev`.                              |
+| `git checkout main`     | Cambiar a la rama `main`.                             |
+| `git log --oneline -10` | Ver los últimos 10 commits.                           |
+| `git stash`             | Guardar temporalmente cambios sin hacer commit.       |
+| `git stash pop`         | Recuperar los cambios guardados con `git stash`.      |
 
 ---
 
