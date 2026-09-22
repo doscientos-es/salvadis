@@ -31,14 +31,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/salvadis-favicon.png" />
     <meta name="theme-color" content="#E8A844" />
-    <!-- Google Tag Manager / Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N59JEJ40RD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-N59JEJ40RD');
-    </script>
+    <!-- Consentimiento de cookies: la analítica se carga solo tras aceptar -->
+    <script src="js/cookies.js"></script>
     <!-- Datos Estructurados (Schema JSON-LD) -->
     <script type="application/ld+json">
             {
@@ -57,7 +51,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
@@ -65,6 +60,7 @@
     <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/cta-footer.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cookies.css">
     <!-- Iconos -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -340,7 +336,8 @@
             <div class="cards-grid">
                 <article class="card-box ind-quimica">
                     <h4><strong>Industria<br> Química</strong></h4>
-                    <p>Gestión y recuperación de productos químicos afectados, excedentes, obsoletos o fuera de especificación.</p>
+                    <p>Gestión y recuperación de productos químicos afectados, excedentes, obsoletos o fuera de
+                        especificación.</p>
                 </article>
 
                 <article class="card-box ind-logistica">
@@ -481,6 +478,9 @@
             </div>
             <div>
                 <p><a href="politica-de-cookies" title="Política Cookies" class="politica">Política Cookies</a></p>
+            </div>
+            <div>
+                <p><a href="#" class="politica" data-ck="config" title="Configurar cookies">Configurar cookies</a></p>
             </div>
             <div class="copy">
                 <p>&copy; <span id="year"></span> Salvamento y Distribución de Productos Químicos. Todos los derechos
