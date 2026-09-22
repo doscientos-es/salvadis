@@ -848,7 +848,7 @@ h3 {
 }
 
 .hero {
-    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    background: url('../images/video-hero.webp') center/cover no-repeat;
     /* Imagen en m�viles */
 }
 
