@@ -129,10 +129,11 @@
     <!-- HERO -->
     <section class="hero">
         <!-- Video de fondo -->
-        <video autoplay muted loop playsinline class="hero-video">
+        <video autoplay muted loop playsinline preload="auto" poster="images/video-hero.webp" class="hero-video"
+            aria-hidden="true">
             <source src="videos/video-hero.mp4" type="video/mp4">
             <!-- Si el video no se carga, se muestra esta imagen -->
-            <img src="images/video-hero.webp" alt="Portada Salvadis Home" class="video-fallback">
+            <img src="images/video-hero.webp" alt="" class="video-fallback">
         </video>
 
         <!-- Capa oscura para mejorar la legibilidad del texto -->
@@ -140,11 +141,10 @@
 
         <!-- Contenido del Hero -->
         <div class="hero-content">
-            <h1>Salvamento y recuperación de productos químicos</h1>
-            <p>Gestionamos productos siniestrados, excedentes, obsoletos y fuera de especificación, buscando la mejor
-                alternativa para cada mercancía</p>
+            <h1>Gestión de productos químicos y mercancías industriales</h1>
+            <p>Recuperación, valoración, retirada y distribución con trazabilidad y máxima seguridad.</p>
             <a href="soluciones" class="btn-hero">
-                <span class="btn-text">Ver Soluciones</span>
+                <span class="btn-text">Conoce nuestras soluciones</span>
                 <span class="material-symbols-outlined">arrow_outward</span>
             </a>
         </div>
