@@ -145,6 +145,76 @@
     /* Ocultar por defecto */
 }
 
+/* Página actual */
+.navbar-nav > li.active > a::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Mantener el mismo estilo de color */
+.navbar-nav > li.active > a {
+    color: #303030 !important;
+}
+/* Elemento activo dentro del dropdown */
+.dropdown-menu > li.active > a::after {
+    width: 100%;
+    left: 0;
+}
+/* =================================
+   ESTADOS DEL MENÚ
+   ================================= */
+
+/* Página actual */
+.navbar-nav > li.active > a::after {
+    width: 100%;
+    left: 0;
+}
+
+.dropdown-menu > li.active > a::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Evitar fondo gris al clicar */
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus-visible,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:active,
+.dropdown-menu > li > a:focus-visible {
+    background-color: transparent !important;
+    color: #303030 !important;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Evitar gris de Bootstrap en dropdown abierto */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: transparent !important;
+    color: #303030 !important;
+}
+
+/* Mantener el activo limpio */
+.navbar-nav > li.active > a {
+    background-color: transparent !important;
+    color: #303030 !important;
+}
+/* Quitar fondo azul de los enlaces del dropdown */
+.dropdown-menu > li > a,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:active,
+.dropdown-menu > li.active > a,
+.dropdown-menu > li.active > a:hover,
+.dropdown-menu > li.active > a:focus,
+.dropdown-menu > li.active > a:active {
+    background-color: transparent !important;
+    color: #303030 !important;
+    box-shadow: none !important;
+}
+
 /* Efecto de entrada suave */
 @keyframes fadeIn {
     from {
