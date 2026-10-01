@@ -25,7 +25,7 @@ Cuando en `dev` todo funcione, copia y pega este bloque **tal cual**:
 
 ```powershell
 git checkout main
-git pull origin main
+git pull origin main (cuando hago cambios en main tengo que hacer pull en dev para que se actualice también)
 git merge dev
 git push origin main
 git checkout dev

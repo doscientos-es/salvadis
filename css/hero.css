@@ -39,17 +39,17 @@
 
 }
 
-.hero::after {
+/* .hero::after {
     content: "";
     position: absolute;
     bottom: -1px;
     width: 100%;
     height: 10px;
-    /* Ajusta la altura del degradado */
+    /* Ajusta la altura del degradado
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #303030 100%);
     z-index: 1;
 
-}
+} */
 
 /* Contenido del Hero */
 .hero-content {
