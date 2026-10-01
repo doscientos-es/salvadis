@@ -1462,6 +1462,13 @@ input[type="reset"]:active,
     outline: none !important;
     box-shadow: none !important;
 }
+.stats-section-contact p{
+        text-align: left;
+    }
+.faq-header {
+    text-align: left;
+
+}
 
 /* Regla única mobile: quitar solo el gutter interno de Bootstrap en .container */
 @media screen and (max-width: 768px) {
